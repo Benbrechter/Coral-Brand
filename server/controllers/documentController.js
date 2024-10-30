@@ -4,10 +4,15 @@ const fs = require('fs').promises;
 
 exports.uploadWritings = async (req, res, next) => {
   try {
+    console.log('Starting upload process');
+    console.log('Request file:', req.file);
+
     if (!req.file) {
+      console.log('No file found in request');
       return res.status(400).json({ error: 'No file uploaded' });
     }
 
+    console.log('Creating new Writings document');
     const document = new Writings({
       filename: req.file.filename,
       data: req.file.data,
@@ -15,8 +20,10 @@ exports.uploadWritings = async (req, res, next) => {
       path: `/uploads/${req.file.filename}`
     });
 
+    console.log('Saving document to database');
     await document.save();
-
+    console.log('Document saved successfully');
+    
     res.status(201).json({
       message: 'Document uploaded successfully',
       document
