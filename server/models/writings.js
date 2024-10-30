@@ -5,19 +5,17 @@ const pdfSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  data: {
-    type: Buffer,
-    required: true
-  },
+  data: Buffer,
   contentType: {
     type: String,
-    required: true
   },
-  uploadDate: {
-    type: Date,
-    default: Date.now
+  path: {
+    type: String,
+    required: true
   }
-});
+},
+ { timestamps: true }
+);
 
 const Writings = mongoose.model('Writings', pdfSchema);
 
