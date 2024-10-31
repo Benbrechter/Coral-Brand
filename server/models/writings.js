@@ -12,6 +12,12 @@ const pdfSchema = new mongoose.Schema({
   path: {
     type: String,
     required: true
+  },
+  title: {
+    type: String,
+  },
+  chapter: {
+    type: Number
   }
 },
  { timestamps: true }
