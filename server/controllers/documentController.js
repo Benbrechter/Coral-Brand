@@ -17,7 +17,9 @@ exports.uploadWritings = async (req, res, next) => {
       filename: req.file.filename,
       data: req.file.data,
       contentType: req.file.contentType,
-      path: `/uploads/${req.file.filename}`
+      path: `/uploads/${req.file.filename}`,
+      title: req.file.title,
+      chapter: req.file.chapter
     });
 
     console.log('Saving document to database');
