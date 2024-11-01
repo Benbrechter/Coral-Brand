@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
 import Navbar from './componets/navbar';
 import About from './About'
+import Charities from './componets/charities';
+import WritingsContainer from './componets/writing-container';
 
 function Home(){
     return(
@@ -8,8 +9,15 @@ function Home(){
             <div>
                 <Navbar/>
             </div>
+            <img src="" alt="A cool graphic of trey and I" />
             <div>
                 <About/>
+            </div>
+            <div>
+                <WritingsContainer/>
+            </div>
+            <div>
+                <Charities/>
             </div>
             <div>
                 <Contact/>
