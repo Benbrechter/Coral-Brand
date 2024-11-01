@@ -1,4 +1,4 @@
-import HomeBtn from "./componets/home-btn"
+import HomeBtn from "./home-btn"
 
 function About() {
     return(

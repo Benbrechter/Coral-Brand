@@ -1,4 +1,4 @@
-const {Writings, User} = require('../models/index')
+const {Writings} = require('../models/index')
 const path = require('path');
 const fs = require('fs').promises;
 
