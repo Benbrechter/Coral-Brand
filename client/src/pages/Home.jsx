@@ -1,6 +1,7 @@
 import Navbar from './componets/navbar';
-import About from './About'
+import About from './componets/About'
 import Charities from './componets/charities';
+import Contact from './componets/contact';
 import WritingsContainer from './componets/writing-container';
 
 function Home(){
