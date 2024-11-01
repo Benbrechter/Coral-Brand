@@ -1,26 +1,17 @@
-import HomeBtn from "./home-btn"
 
 function About() {
     return(
-        <div>
-            <div><HomeBtn/></div>
-            <div className = 'about-box1'>
-                <img src="" alt="" />
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit itaque suscipit vero autem nemo cupiditate nam obcaecati provident dolore, non, inventore, veniam quo maiores repudiandae incidunt quisquam nobis. Quod, fugiat.</p>
+        <div className="about-container">
+            <div className="about-img">
+                <img src="" alt="This will be a cute pic of me" />
             </div>
-            <div className = 'about-box2'>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit itaque suscipit vero autem nemo cupiditate nam obcaecati provident dolore, non, inventore, veniam quo maiores repudiandae incidunt quisquam nobis. Quod, fugiat.</p>
-                <img src="" alt="" />
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit itaque suscipit vero autem nemo cupiditate nam obcaecati provident dolore, non, inventore, veniam quo maiores repudiandae incidunt quisquam nobis. Quod, fugiat.</p>
+            <div className="about-text">
+                <h1>Meet Me</h1>
+                <p className="about-paragraph">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolore id voluptates dicta magni accusantium incidunt nam. Quaerat, eligendi quas? Odio consequatur sapiente architecto distinctio! Maxime corporis quo neque dolorum?
+                </p>
             </div>
-            <div className = 'about-box3'>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit itaque suscipit vero autem nemo cupiditate nam obcaecati provident dolore, non, inventore, veniam quo maiores repudiandae incidunt quisquam nobis. Quod, fugiat.</p>
-                <img src="" alt="" />
-            </div>
-            <div className = 'about-box3'>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit itaque suscipit vero autem nemo cupiditate nam obcaecati provident dolore, non, inventore, veniam quo maiores repudiandae incidunt quisquam nobis. Quod, fugiat.</p>
-                <img src="" alt="" />
-            </div>
+           
         </div>
     )
 }
