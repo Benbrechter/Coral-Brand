@@ -1,8 +1,9 @@
 import Navbar from './componets/navbar';
 import About from './componets/About'
-import Charities from './componets/charities';
+import Support from './componets/support';
 import WritingsContainer from './componets/writing-container';
 import HomeBtn from './componets/home-btn';
+import Footer from './componets/footer';
 
 function Home(){
     return(
@@ -25,8 +26,9 @@ function Home(){
                 <WritingsContainer/>
             </div>
             <div>
-                <Charities/>
+                <Support/>
             </div>
+            <Footer/>
            
         </div>
     )

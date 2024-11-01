@@ -1,7 +1,10 @@
-
+import HomeBtn from "./componets/home-btn"
 function Iphone() {
     return(
-        <div></div>
+        <div>
+            <HomeBtn/>
+            <h1>Shittttt</h1>
+        </div>
     )
 
 }
