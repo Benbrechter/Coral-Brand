@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import WWriting from './pages/weekly-writings';
 import PrevWriting from './pages/previous-writings';
 import Pictures from './pages/Trey';
-import Contact from './pages/contact';
+import Contact from './pages/componets/contact';
 import Home from './pages/Home';
 import Iphone from './pages/Iphone';
 
