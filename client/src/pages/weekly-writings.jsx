@@ -1,9 +1,10 @@
 import HomeBtn from "./componets/home-btn"
-
+import Navbar from "./componets/navbar"
 function WWriting(){
     return(
         <div>
             <div><HomeBtn/></div>
+            <div> <Navbar /> </div>
             <div className = 'weekly-Story-container'>
                 <h1>This will be the story title</h1>
                 <h2>this will be the chapter</h2>
