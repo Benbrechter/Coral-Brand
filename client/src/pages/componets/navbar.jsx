@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
     return(
+        <div>
+            <div className='bar'>
+                <h1>Who am I to judge another when I myself walk as an imperfect man</h1>
+            </div>
         <nav className='navbar-container'>
             <div className='img-container'>
                 <img src="" alt="this will be the logo" />
@@ -15,6 +19,7 @@ function Navbar() {
                 <li><Link to = '/Iphone' className='nav-h1'>Shot on iphone</Link> </li>
             </ul> 
         </nav>
+        </div>
     )
 }
 

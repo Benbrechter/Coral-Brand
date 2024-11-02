@@ -9,9 +9,6 @@ function Home(){
     return(
         <div>
             <HomeBtn/>
-            <div className='bar'>
-                <h1>Quote</h1>
-            </div>
             <div>
                 <Navbar/>
             </div>
