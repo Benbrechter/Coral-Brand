@@ -1,9 +1,10 @@
 import Navbar from './componets/navbar';
 import About from './componets/About'
-import Support from './componets/support';
+// import Support from './componets/support';
 import WritingsContainer from './componets/writing-container';
 import HomeBtn from './componets/home-btn';
 import Footer from './componets/footer';
+import picture from './pictures/placeholder.jpg'
 
 function Home(){
     return(
@@ -13,7 +14,7 @@ function Home(){
                 <Navbar/>
             </div>
             <div className = 'img-treyandI'> 
-                <img src="" alt="A cool graphic of trey and I" />
+                <img src= {picture} alt="A cool graphic of trey and I" />
             </div>
             
             <div>
@@ -22,9 +23,9 @@ function Home(){
             <div>
                 <WritingsContainer/>
             </div>
-            <div>
+            {/* <div>
                 <Support/>
-            </div>
+            </div> */}
             <Footer/>
            
         </div>

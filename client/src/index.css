@@ -35,7 +35,7 @@ margin: 0;
 
 /* NavBar */
 .navbar-container{
-  background-color: yellow;
+  background-color: purple;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -64,13 +64,17 @@ margin: 0;
 
 /* image of trey and I before the About */
 .img-treyandI{
-  background-color: blue;
+  background-color: purple;
   height: 800px;
+}
+.img-treyandI img{
+  height: 850px;
+  width: 100%;
 }
 
 /* About */
 .about-container{
-  background-color: yellow;
+  background-color: purple;
   height: 1000px;
   position: relative;
 }
@@ -118,9 +122,12 @@ margin: 0;
 }
 .things-to-do{
   margin: 40px;
+  text-align: center;
+  
 }
 .things-to-do img{
   height: 200px;
+
 }
 
 .link{
@@ -134,7 +141,7 @@ margin: 0;
 
 /* Support */
 .support-container{
-  background-color: yellow;
+  background-color: purple;
   height: 500px;
 }
 .support-container h1{
@@ -143,12 +150,19 @@ margin: 0;
 
 /* footer */
 .footer-container{
-  background-color: blue;
+  background-color: purple;
   height: 175px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.footer-container img{
+  height: 50px;
+  margin: 0px 15px;
+}
+.footer-container p{
+  margin: 0;
 }
 
 /* Weekly writings page */
