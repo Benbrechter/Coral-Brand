@@ -1,9 +1,10 @@
+import picture from '../pictures/IMG_0391.jpg'
 
 function About() {
     return(
         <div className="about-container">
             <div className="about-img">
-                <img src="" alt="This will be a cute pic of me" />
+                <img src= {picture} alt="This will be a cute pic of me"  className='picture-of-me'/>
             </div>
             <div className="about-text">
                 <h1>Meet Me</h1>
