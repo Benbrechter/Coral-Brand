@@ -1,6 +1,22 @@
 import HomeBtn from "./componets/home-btn"
 import Navbar from "./componets/navbar"
+import React, {useState , useEffect} from "react"
+
 function WWriting(){
+    const [writings, setWritings] = useState([])
+
+    useEffect(() => {
+        const fetchWritings = async () => {
+            try{
+                const response = await fetch('/api/documents/:id');
+                const data = await response.json();
+                setWritings(data)
+            }catch(error){
+                console.error('The writings did not persist', error)
+            }
+        };
+        fetchWritings()
+    }, [])
     return(
         <div>
             <div><HomeBtn/></div>
