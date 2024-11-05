@@ -18,12 +18,22 @@ function Iphone() {
       };
       fetchPictures();
     }, []);
-    
+
     return(
         <div>
             <div> <Navbar/> </div>
             <HomeBtn/>
-            <h1>Shittttt</h1>
+            <div className="Iphone-container">
+                {pictures.map((picture) => (
+                    <div key={picture._id} className="iphone-imgBox">
+                        <h1>{picture.title}</h1>
+                        <img src={picture.path} alt="image" />
+                        <p>{picture.description}</p>
+                    </div>
+                ))}
+                
+
+            </div>
         </div>
     )
 
