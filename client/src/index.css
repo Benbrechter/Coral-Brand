@@ -173,7 +173,21 @@ margin: 0;
   align-items: center;
 }
 
+/* Shot on Iphone page*/
+/* .Iphone-container{
 
+} */
+.iphone-imgBox{
+  height: 600px;
+  width: 400px;
+  border: 2px solid black ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iphone-imgBox img{
+  height: 400px;
+}
 
 
 
