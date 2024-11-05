@@ -12,8 +12,8 @@ exports.uploadPictures = async (req, res, next) => {
         return res.status(400).json({ error: 'No file uploaded' });
       }
   
-      console.log('Creating new Writings document');
-      const document = new Pictures({
+      console.log('Creating new Picture');
+      const picture = new Pictures({
         filename: req.file.filename,
         data: req.file.data,
         contentType: req.file.contentType,
@@ -22,13 +22,13 @@ exports.uploadPictures = async (req, res, next) => {
         description: req.file.description
       });
   
-      console.log('Saving document to database');
-      await document.save();
-      console.log('Document saved successfully');
+      console.log('Saving Picture to database');
+      await picture.save();
+      console.log('Picture saved successfully');
       
       res.status(201).json({
-        message: 'Document uploaded successfully',
-        document
+        message: 'Picture uploaded successfully',
+        picture
       });
     } catch (error) {
       next(error);
