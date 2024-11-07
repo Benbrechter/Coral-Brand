@@ -6,6 +6,7 @@ import Contact from './pages/componets/contact';
 import Home from './pages/Home';
 import Iphone from './pages/Iphone';
 
+
 function App() {
 
   return (
