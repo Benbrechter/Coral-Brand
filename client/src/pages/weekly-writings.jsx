@@ -42,8 +42,8 @@ function WWriting(){
             <h2>{writing?.chapter || 'No chapter'}</h2>
             <div>
                <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.15.349/build/pdf.worker.min.js">
-                    <Viewer fileUrl={writing.path}/>
-                    {console.log(writing.path)}
+                    <Viewer fileUrl={writing.path} />
+                    {console.log}
                 </Worker> 
             </div>
 
