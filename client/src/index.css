@@ -167,10 +167,8 @@ margin: 0;
 
 /* Weekly writings page */
 
-.weekly-Story-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.pdf-viewer{
+  height: 800px;
 }
 
 /* Shot on Iphone page*/

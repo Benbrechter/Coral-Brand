@@ -2,7 +2,7 @@ const {Writings} = require('../models/index')
 const path = require('path');
 const fs = require('fs').promises;
 
-exports.uploadWritings = async (req, res, next) => {
+const uploadWritings = async (req, res, next) => {
   try {
     console.log('Starting upload process');
     console.log('Request file:', req.file);
@@ -35,28 +35,37 @@ exports.uploadWritings = async (req, res, next) => {
   }
 };
 
-exports.getAllWritings = async (req, res, next) => {
+const getWritingsById = async (req, res, next) => {
   try {
-    const documents = await Writings.find().sort({ uploadDate: -1 });
-    res.json(documents);
-  } catch (error) {
-    next(error);
-  }
-};
-
-exports.getWritingsById = async (req, res, next) => {
-  try {
-    const document = await Writings.findById(req.params.id);
-    if (!document) {
-      return res.status(404).json({ error: 'Document not found' });
+    const writing = await Writings.findById(req.params.id);
+    if (!writing) {
+        return res.status(404).json({ message: 'Document not found' });
     }
-    res.json(document);
-  } catch (error) {
-    next(error);
-  }
+    
+    // For debugging
+    console.log('Writing data:', {
+        hasData: !!writing.data,
+        dataType: typeof writing.data,
+        isBuffer: Buffer.isBuffer(writing.data),
+        contentType: writing.contentType
+    });
+
+    res.json(writing);
+} catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Error fetching document', error: error.message });
+}
 };
 
-exports.deleteWritings = async (req, res, next) => {
+const getAllWritings = async (req, res) =>{
+  try {
+    const writings = await Writings.find()
+    res(200).json(writings)
+  } catch(err){
+    res(500).json(err)
+  }
+}
+const deleteWritings = async (req, res, next) => {
   try {
     const document = await Writings.findById(req.params.id);
     
@@ -75,3 +84,19 @@ exports.deleteWritings = async (req, res, next) => {
     next(error);
   }
 };
+
+module.exports = {
+  uploadWritings,
+  getWritingsById,
+  deleteWritings,
+  getAllWritings
+}
+
+// exports.getAllWritings = async (req, res, next) => {
+//   try {
+//     const documents = await Writings.find().sort({ uploadDate: -1 });
+//     res.json(documents);
+//   } catch (error) {
+//     next(error);
+//   }
+// };
