@@ -1,30 +1,52 @@
 import HomeBtn from "./componets/home-btn"
 import Navbar from "./componets/navbar"
-import { Link } from "react-router-dom"
+import { Link, useNavigate  } from "react-router-dom"
 import React, {useState , useEffect} from "react"
+import PrevWritingTitle from "./componets/prev-title"
 
 function PrevWriting(){
-    const [writings, setWritings] = useState([])
+    const navigate = useNavigate();
+    const [writingData, setWritingData] = useState([]);
 
     useEffect(() => {
         const fetchWritings = async () => {
             try{
-                const response = await fetch('/api/documents/:id');
-                const data = await response.json();
-                setWritings(data)
+                const response = await fetch('/api/documents');
+                const writingData = await response.json();
+                console.log(writingData)
+                setWritingData(writingData);
             }catch(error){
                 console.error('The writings did not persist', error)
             }
         };
-        fetchWritings()
+        fetchWritings()   
     }, [])
+        const handleWritingClick = (writingId) => {
+            // Navigate to the chatroom
+            navigate(`/documents/${writingId}`);
+            
+            // You can add any additional actions here
+            // For example, you might want to fetch chatroom data, update some state, etc.
+            console.log(`Navigating to writings ${writingId}`);
+          };
+
     return(
         <div>
             <div> <Navbar/> </div>
             <div><HomeBtn/></div>
             <div>
-                <Link><h1>Fiore and Llamar</h1></Link>
-                <Link><h1>Xan and Atreties</h1></Link>
+            <ul>
+  {writingData.map((writing, index) => (
+    <li key={writing._id || `writing${index}`}>
+      <Link
+        to={`/documents/${writing._id}`}
+        onClick={() => handleWritingClick(writing._id)}
+      >
+        <PrevWritingTitle writing={writing} />
+      </Link>
+    </li>
+  ))}
+</ul>
                 
             </div>
         </div>

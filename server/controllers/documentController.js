@@ -60,7 +60,7 @@ const getWritingsById = async (req, res, next) => {
 const getAllWritings = async (req, res) =>{
   try {
     const writings = await Writings.find()
-    res(200).json(writings)
+    res.json(writings)
   } catch(err){
     res(500).json(err)
   }
