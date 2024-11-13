@@ -187,5 +187,21 @@ margin: 0;
   height: 400px;
 }
 
-
+/* previouse writings page */
+.prev-writings-ul{
+  display: none;
+  flex-direction: column;
+  list-style-type: none;
+}
+.prev-writings-ul :visited{
+  color: black;
+}
+.PW-Trey{
+  display: flex;
+  align-items: center;
+}
+.dropdown-menu-icon{
+  margin-left: 15px;
+  margin-top: 15px;
+}
 
