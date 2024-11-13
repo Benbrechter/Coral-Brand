@@ -1,12 +1,15 @@
 const mongoose = require('mongoose');
 
-const pdfSchema = new mongoose.Schema({
+const writingSchema = new mongoose.Schema({
   filename: {
     type: String,
     required: true
   },
   data: Buffer,
   contentType: {
+    type: String,
+  },
+  content: {
     type: String,
   },
   path: {
@@ -23,6 +26,6 @@ const pdfSchema = new mongoose.Schema({
  { timestamps: true }
 );
 
-const Writings = mongoose.model('Writings', pdfSchema);
+const Writings = mongoose.model('Writings', writingSchema);
 
 module.exports = Writings;

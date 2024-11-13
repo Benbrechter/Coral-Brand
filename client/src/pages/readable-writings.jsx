@@ -1,6 +1,7 @@
 import HomeBtn from "./componets/home-btn"
 import Navbar from "./componets/navbar"
 import { useParams} from 'react-router-dom';
+import FileViewer from 'react-file-viewer';
 import React, {useState, useEffect} from "react"
 
 function Read(){
@@ -28,12 +29,41 @@ function Read(){
             }
         }
         fetchWritings()
-    }, [])
+    }, [id])
+    
+    const CustomErrorComponent = ({ error }) => (
+        <div>An error occurred: {error}</div>
+    );
+
+    const onError = (e) => {
+        console.log('Error in file-viewer:', e);
+        setError(e.message);
+    };
+
+       // Show loading state
+       if (isLoading) {
+        return <div>Loading...</div>;
+    }
+
+    // Show error state
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
+    // Show loading or error if writing is not yet loaded
+    if (!writing) {
+        return <div>No writing found</div>;
+    }
+
     return (
         <div>
             <div> <Navbar/> </div>
             <div><HomeBtn/></div>
-            <div>IDK BRO HOW</div>
+            <FileViewer
+        fileType='txt'
+        filePath={writing.path}
+        errorComponent={CustomErrorComponent}
+        onError={onError}/>
         </div>
         
     )
