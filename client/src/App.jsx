@@ -5,7 +5,7 @@ import Pictures from './pages/Trey';
 import Contact from './pages/componets/contact';
 import Home from './pages/Home';
 import Iphone from './pages/Iphone';
-
+import Read from './pages/readable-writings';
 
 function App() {
 
@@ -21,6 +21,7 @@ function App() {
           <Route path="/Trey" element={<Pictures />} />
           <Route path="*" element={<Navigate to="/" />} />
           <Route path = '/Iphone' element = {<Iphone/>} />
+          <Route path = '/documents/:id' element = {<Read/>} />
         </Routes>
       </main>
     </div>
