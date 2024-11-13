@@ -2,6 +2,7 @@ const {Writings} = require('../models/index')
 const path = require('path');
 const fs = require('fs').promises;
 
+
 const uploadWritings = async (req, res, next) => {
   try {
     console.log('Starting upload process');
@@ -34,6 +35,7 @@ const uploadWritings = async (req, res, next) => {
     next(error);
   }
 };
+
 
 const getWritingsById = async (req, res, next) => {
   try {
@@ -91,12 +93,3 @@ module.exports = {
   deleteWritings,
   getAllWritings
 }
-
-// exports.getAllWritings = async (req, res, next) => {
-//   try {
-//     const documents = await Writings.find().sort({ uploadDate: -1 });
-//     res.json(documents);
-//   } catch (error) {
-//     next(error);
-//   }
-// };
