@@ -9,7 +9,7 @@ function About() {
             <div className="about-text">
                 <h1>Meet Me</h1>
                 <p className="about-paragraph">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolore id voluptates dicta magni accusantium incidunt nam. Quaerat, eligendi quas? Odio consequatur sapiente architecto distinctio! Maxime corporis quo neque dolorum?
+                    Hiia! I am 22 years old and claim just to be a creative. My alias online are Benbeejammin and once TwoSoulsProjection. My only goal in life to to maintain happiness and spread smiles throughout my peers. I don't belive in getting rich becasue too much money will corrupt even the purest. Ideally I would just like to keep living. 
                 </p>
             </div>
            
