@@ -26,7 +26,7 @@ function WWriting() {
         SwitchThemeMenuItem: () => <></>,
         PrintMenuItem: () => <></>,
         OpenMenuItem: () => <></>
-    })
+    }) 
 
     // Create the default layout plugin with customizations
     const defaultLayoutPluginInstance = defaultLayoutPlugin({
@@ -68,6 +68,10 @@ function WWriting() {
         <div>
             <HomeBtn />
             <Navbar />
+            <div className="weekly-sidebar">
+                <h1>Why I do What I do?</h1>
+                <p>I display my weekly writings in pdf format so the viewer has the option to print, download, zoom in, or display a completly differant pdf. I write purley for myself and others peoples perspectives are valued but never taken into consideration. This platform is my brand. Every week I will come out with chapters from various writing that I have written. I can not and will not post everything I write because I do not have the funds to afford a large scale storage sytem. I do however have various easter eggs in this cite and one of them include disrections to a box of hard drives that have my most preciouse writings. I am not clinically insne but many of my peers have given me this title. I am ok with that </p>
+            </div>
             <div className="pdf-container">
                 <h1>{writing?.title || 'Untitled'}</h1>
                 <h2>{writing?.chapter || 'No chapter'}</h2>
