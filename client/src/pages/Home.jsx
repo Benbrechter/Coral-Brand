@@ -5,6 +5,7 @@ import WritingsContainer from './componets/writing-container';
 import HomeBtn from './componets/home-btn';
 import Footer from './componets/footer';
 import picture from './pictures/placeholder.jpg'
+import background from './pictures/background.png'
 
 function Home(){
     return(
@@ -14,7 +15,7 @@ function Home(){
                 <Navbar/>
             </div>
             <div className = 'img-treyandI'> 
-                <img src= {picture} alt="A cool graphic of trey and I" />
+                <img src= {background} alt="A cool graphic of trey and I" />
             </div>
             
             <div>
