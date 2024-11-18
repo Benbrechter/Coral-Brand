@@ -4,6 +4,7 @@ import React, {useState, useEffect} from "react"
 import { Viewer, Worker } from '@react-pdf-viewer/core'
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout"
 import { toolbarPlugin } from '@react-pdf-viewer/toolbar';
+import Footer from "./componets/footer"
 
 import '@react-pdf-viewer/core/lib/styles/index.css'
 import "@react-pdf-viewer/default-layout/lib/styles/index.css"
@@ -86,6 +87,7 @@ function WWriting() {
                     </div>
                 )}
             </div>
+            <Footer/>
         </div>
     )
 }

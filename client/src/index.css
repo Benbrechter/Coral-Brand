@@ -35,7 +35,6 @@ margin: 0;
 
 /* NavBar */
 .navbar-container{
-  background-color: purple;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -46,10 +45,10 @@ margin: 0;
   list-style-type: none;
 }
 .img-container{
-  margin: 25px;
-  background-color:black ;
-  height: 100px;
-  width: 300px;
+  height: 300px;
+}
+.img-container img {
+  height:inherit
 }
 .nav-h1{
   margin: 20px;
@@ -171,7 +170,7 @@ margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 1500px;
+  height: 1400px;
 }
 .weekly-pdf{
   height: 900px;
@@ -182,7 +181,7 @@ margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 1500px;
+  height: 1400px;
   width: 400px;
   background-color: aqua;
 }
