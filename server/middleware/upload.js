@@ -5,8 +5,10 @@ const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg') {
       cb(null, 'uploads/images/');
-    } else if (file.mimetype === 'text/plain' || file.mimetype === 'application/pdf') {
-      cb(null, 'uploads/text/');
+    } else if (file.mimetype === 'text/plain') {
+      cb(null, 'uploads/text/');  
+    }else if (file.mimetype === 'pdf'){
+      cb(null, 'uploads/pdf/')
     } else {
       cb(new Error('Unsupported file type'), false);
     }
