@@ -1,7 +1,7 @@
 import HomeBtn from "./componets/home-btn"
 import Navbar from "./componets/navbar"
 import { useParams} from 'react-router-dom';
-import FileViewer from 'react-file-viewer';
+import DocViewer, { DocViewerRenderers } from "react-doc-viewer";
 import React, {useState, useEffect} from "react"
 
 function Read(){
@@ -59,11 +59,13 @@ function Read(){
         <div>
             <div> <Navbar/> </div>
             <div><HomeBtn/></div>
-            <FileViewer
-        fileType='txt'
-        filePath={writing.path}
-        errorComponent={CustomErrorComponent}
-        onError={onError}/>
+            <DocViewer
+                pluginRenderers={DocViewerRenderers}
+                documents={[{ 
+                    uri: writing.path,
+                    fileType: 'txt' 
+                }]}
+            />;
         </div>
         
     )
