@@ -3,7 +3,13 @@ const path = require('path');
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads/');
+    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg') {
+      cb(null, 'uploads/images/');
+    } else if (file.mimetype === 'text/plain' || file.mimetype === 'application/pdf') {
+      cb(null, 'uploads/text/');
+    } else {
+      cb(new Error('Unsupported file type'), false);
+    }
   },
   filename: (req, file, cb) => {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
@@ -12,7 +18,7 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-  const allowedMimes = ['text/plain', 'image/jpeg', 'pdf'];
+  const allowedMimes = ['text/plain', 'image/jpeg', 'pdf', 'image/jpg'];
   if (allowedMimes.includes(file.mimetype)) {
     cb(null, true);
   } else {
