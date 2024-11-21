@@ -2,9 +2,9 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  --purple: #dc29e7;
-  --blue: #28e7dc;
-  --yellow: #e7dc28;
+  --purple: #88ed;
+  --blue: #62ab9a;
+  --yellow: #ecd488;
 
   color-scheme: light dark;
   color: #242424;
@@ -42,7 +42,7 @@ margin: 0;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: var(--yellow);
+  background-color: var(--purple);
 }
 .navbar-ul{
   display: flex;
@@ -56,12 +56,12 @@ margin: 0;
 }
 .nav-h1{
   margin: 20px;
-  color: black;
+  color: var(--yellow);
   text-decoration: none;
 }
 
 .nav-h1:visited{
-  color: black;
+  color: var(--yellow);
   text-decoration: none;
 }
 

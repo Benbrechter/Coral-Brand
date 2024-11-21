@@ -2,7 +2,11 @@ import picture from '../pictures/IMG_0391.jpg'
 
 function About() {
     return(
+        
         <div className="about-container">
+            <div className='bar'>
+                <h1>Who am I to judge another when I myself walk as an imperfect man</h1>
+            </div>
             <div className="about-img">
                 <img src= {picture} alt="This will be a cute pic of me"  className='picture-of-me'/>
             </div>

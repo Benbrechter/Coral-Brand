@@ -5,7 +5,7 @@ import WritingsContainer from './componets/writing-container';
 import HomeBtn from './componets/home-btn';
 import Footer from './componets/footer';
 import picture from './pictures/placeholder.jpg'
-import background from './pictures/collage.png'
+import background from './pictures/collage2.png'
 
 function Home(){
     return(
