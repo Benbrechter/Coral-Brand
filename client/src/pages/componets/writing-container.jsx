@@ -6,7 +6,11 @@ import computer from "../pictures/macbook.png"
 
 function WritingsContainer(){
     return(
-        <div className="Events-Container">
+        <div>
+            <div className='bar'>
+                <h1>Who am I to judge another when I myself walk as an imperfect man</h1>
+            </div>
+           <div className="Events-Container">
             <div className="things-to-do">
                 <Link to = '/writings'className="link">
                 <img src={computer} alt="Notebook maybe" />
@@ -31,7 +35,12 @@ function WritingsContainer(){
                 <h1>Pictures of my cat trey</h1>
                 </Link>
             </div>
+        </div> 
+        <div className='bar'>
+                <h1>Who am I to judge another when I myself walk as an imperfect man</h1>
+            </div>
         </div>
+        
     )
 }
 
