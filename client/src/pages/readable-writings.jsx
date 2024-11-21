@@ -42,30 +42,36 @@ function Read(){
 
        // Show loading state
        if (isLoading) {
-        return <div>Loading...</div>;
+        return <div>Loading...</div>
     }
 
     // Show error state
     if (error) {
-        return <div>Error: {error}</div>;
+        return <div>Error: {error}</div>
     }
 
     // Show loading or error if writing is not yet loaded
     if (!writing) {
-        return <div>No writing found</div>;
+        return <div>No writing found</div>
     }
 
     return (
         <div>
             <div> <Navbar/> </div>
             <div><HomeBtn/></div>
-            <DocViewer
+            <div className="doc-container">
+                 <div className="docViewer">
+                <DocViewer
                 pluginRenderers={DocViewerRenderers}
                 documents={[{ 
                     uri: writing.path,
                     fileType: 'txt' 
                 }]}
-            />;
+            />
+            </div>
+            </div>
+           
+            
         </div>
         
     )

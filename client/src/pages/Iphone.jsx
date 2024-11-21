@@ -31,22 +31,29 @@ function Iphone() {
             <div> <Navbar/> </div>
             <HomeBtn/>
             <div style={{height: '1400px'}}>
-            <div >
+            <div className = 'camera-gallery'>
               <h1>Camera Gallery</h1>
-              <p>I do not belive in labels becasue people should not be put into a construct created by other people. Nothing I post on here is for anyone but myself.</p>
+              <p>I CREATE ART FOR MYSELF! if you like what I produce I love you If you do not it is okay I still love you.</p>
             </div>
-            <div className="Iphone-container">
+            <div className="display-Iphone">
+               <div className="Iphone-container">
                 {pictures.length > 0 && (
                     <div key={pictures[currentIndex]._id} className="iphone-imgBox">
                         <h1>{pictures[currentIndex].title || 'picture'}</h1>
                         <img src={pictures[currentIndex].path} alt="image" />
-                        <p>{pictures.description || 'decription'}</p>
                         <button onClick={handleBackward}>Flip through the photo Album</button>
+                        <div className="description">
+                          <p>{pictures.description || 'decription'}</p>
+                        </div>
+                        
+                        
                     </div>
                 )}
                 
 
             </div>
+            </div>
+           
             </div>
             <Footer/>
         </div>
