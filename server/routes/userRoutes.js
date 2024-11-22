@@ -2,7 +2,7 @@ const router = require('express').Router();
 const userController = require('../controllers/userController');
 
 // Register new user
-router.post('/', userController.createUser);
+router.post('/signup', userController.createUser);
 
 // Login user
 router.post('/login', userController.login);
