@@ -6,6 +6,7 @@ import Contact from './pages/componets/contact';
 import Home from './pages/Home';
 import Iphone from './pages/Iphone';
 import Read from './pages/readable-writings';
+import Login from './pages/componets/login';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" />} />
           <Route path = '/Iphone' element = {<Iphone/>} />
           <Route path = '/documents/:id' element = {<Read/>} />
+          <Route path='/login' element = {<Login/>} />
         </Routes>
       </main>
     </div>
