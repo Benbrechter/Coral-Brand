@@ -56,7 +56,7 @@ function Read(){
     }
 
     return (
-        <div>
+        <div >
             <div> <Navbar/> </div>
             <div><HomeBtn/></div>
             <div className="doc-container">
@@ -67,6 +67,13 @@ function Read(){
                     uri: writing.path,
                     fileType: 'txt' 
                 }]}
+                config={{
+                    header: {
+                        disableHeader: true,
+                        disableFileName: false,
+                        retainURLParams: false,
+                    }
+                   }}
             />
             </div>
             </div>

@@ -43,6 +43,12 @@ function PrevWriting(){
         <div>
             <div> <Navbar/> </div>
             <div><HomeBtn/></div>
+            <div>
+              <h1>I Know You Love MEEEE</h1> 
+              <p>So please feel free to read all my previouse chapters I have.</p> 
+            </div>
+            
+
             <div onClick={ () => showDropdown()} className="PW-Trey">
                 <h1>Trey and Xan's adventures</h1>
                 <a href="#" className="dropdown-menu-icon">
