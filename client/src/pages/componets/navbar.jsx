@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import logo from '../pictures/logo.png'
+import user from "../pictures/userIcon.png"
 
 function Navbar() {
     return(
@@ -9,8 +10,11 @@ function Navbar() {
             <div className='img-container'>
                 <img src= {logo} alt="this will be the logo" />
             </div>
-            
+            <div>
+                
+            </div>
             <ul className='navbar-ul'>
+                <li> <Link to = '/login'><img src= {user} alt=""  style={{height: "25px"}}/></Link> </li>
                 <li><Link to = '/' className='nav-h1'>Home</Link> </li>
                 <li><Link to = '/writings'className='nav-h1'>This Weeks Story</Link> </li>
                 <li><Link to = '/prevWriting'className='nav-h1'>Previous Weeks Story</Link> </li>

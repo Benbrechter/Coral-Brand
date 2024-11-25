@@ -58,14 +58,14 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <HomeBtn />
-      <div>
+      <div className="form">
         <h1>{isLogin ? "Login" : "Sign Up"}</h1>
 
         {error && <div style={{color: 'red'}}>{error}</div>}
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="login-submit">
           {!isLogin && (
             <div>
               <label>
