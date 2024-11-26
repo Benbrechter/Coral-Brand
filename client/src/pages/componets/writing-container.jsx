@@ -4,13 +4,20 @@ import cat from '../pictures/catReading.png'
 import camera from '../pictures/Camera.png'
 import computer from "../pictures/macbook.png"
 
+import { motion } from 'framer-motion';
+
 function WritingsContainer(){
     return(
         <div>
             <div className='bar'>
                 <h1>Who am I to judge another when I myself walk as an imperfect man</h1>
             </div>
-           <div className="Events-Container">
+           <motion.div 
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6 }}
+            className="Events-Container">
             <div className="things-to-do">
                 <Link to = '/writings'className="link">
                 <img src={computer} alt="Notebook maybe" />
@@ -35,7 +42,7 @@ function WritingsContainer(){
                 <h1>Pictures of my cat trey</h1>
                 </Link>
             </div>
-        </div> 
+        </motion.div> 
         <div className='bar'>
                 <h1>Who am I to judge another when I myself walk as an imperfect man</h1>
             </div>
