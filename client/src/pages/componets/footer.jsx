@@ -6,7 +6,6 @@ import wallet from '../pictures/wallet.png'
 function Footer() {
     return(
         <div className="footer-container">
-            <img src="" alt="this will be my logo" />
             <div>
                 <Link to = '/login'> <img src={userIcon} alt="this will allow the user to create a account" /></Link>
                 <a href="https://account.venmo.com/u/Ben-Brechter"><img src= {wallet} alt="This will link you to my venmo" /></a>
