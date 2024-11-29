@@ -19,7 +19,7 @@ const useRouteLoading = () => {
     setIsLoading(true);
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1500); // Adjust loading duration as needed
+    }, 2000); // Adjust loading duration as needed
 
     return () => clearTimeout(timer);
   }, [location.pathname]); // Trigger on route change
