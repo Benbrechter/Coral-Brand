@@ -15,7 +15,7 @@ function WWriting() {
             try {
                 setIsLoading(true)
                 // First, fetch the document metadata
-                const response = await fetch('/api/documents/672aa26a7833a51216470296')
+                const response = await fetch('/api/documents/674cbf7f5a145c33a5f8831c')
                 if (!response.ok) {
                     throw new Error('Failed to fetch writing metadata')
                 }
@@ -72,7 +72,7 @@ function WWriting() {
                                 fontSize: '18px',
                                 lineHeight: '1.6',
                                 padding: '20px',
-                                backgroundColor: '#f9f9f9',
+                                backgroundColor: '#ffffff',
                                 borderRadius: '8px',
                                 maxWidth: '800px',
                                 margin: '0 auto'

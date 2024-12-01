@@ -37,9 +37,9 @@ function WritingsContainer(){
                 </Link>
             </div>
             <div className="things-to-do">
-                <Link to = "/Trey" className="link">
+                <Link to = "/Iphone" className="link">
                 <img src={cat} alt="Cartoon gif of a black cat" />
-                <h1>Pictures of my cat trey</h1>
+                <h1>Shot on iPhone</h1>
                 </Link>
             </div>
         </motion.div> 
