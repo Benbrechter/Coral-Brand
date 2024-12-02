@@ -30,26 +30,30 @@ function PrevWriting(){
           };
 
         const showDropdown = () => {
-            const dropdown = document.querySelector('.prev-writings-ul')
-            dropdown.style.display = 'flex'
+            const dropdown = document.querySelector('.prev-writings-ul');
+            const icon = document.querySelector('.dropdown-menu-icon1');
+            dropdown.style.display = 'flex';
+            icon.style.display = 'none'
         }
         const hideDropdown = () => {
-            const dropdown = document.querySelector('.prev-writings-ul')
-            dropdown.style.display = 'none'
+            const dropdown = document.querySelector('.prev-writings-ul');
+            const icon = document.querySelector('.dropdown-menu-icon1');
+            dropdown.style.display = 'none';
+            icon.style.display = 'flex'
         }
 
     return(
         <div>
             <div> <Navbar/> </div>
-            <div className="prevWriting-header">
-              <h1>I Know You Love MEEEE</h1> 
-              <p>So please feel free to read all my previouse chapters I have.</p> 
-            </div>
-            
+            <div className="entire-pw-container">
+                <h1 className="pw-h1">Read my Writings Please!</h1> 
+                <div className="prevWriting-header">
+              
+                <p>Each week I will release a chapter of a seires I am writing and this page is where you can find each story and their chapters. Currently This is week one so I only have one chapter released. If you would like to stay updated on when I post you can click on the user icon annd sign up for notifications!</p> 
 
             <div onClick={ () => showDropdown()} className="PW-Trey">
                 <h1>Trey and Xan's adventures</h1>
-                <a href="#" className="dropdown-menu-icon">
+                <a href="#" className="dropdown-menu-icon1">
                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
                </a>
                </div>
@@ -73,6 +77,9 @@ function PrevWriting(){
                 </ul>
                 
             </div>
+            </div>
+            </div>
+            
         </div>
     )
 }

@@ -69,7 +69,7 @@ function WWriting() {
                 <div className="weekly-sidebar">
                     <div className="weekly-header">
                         <h1>Why I do What I do?</h1>
-                        <div onClick={ () => showSidebar()} className="dropdown-menu-icon writings-dropdown">
+                        <div onClick={ () => showSidebar()} className="writings-dropdown">
                         <a href="#" style={{marginBottom: '10px'}}><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
                         </div>
 
@@ -88,20 +88,7 @@ function WWriting() {
                     <h2>{writing.chapter}</h2>
                     
                     {fileContent ? (
-                        <pre 
-                            style={{
-                                whiteSpace: 'pre-wrap',
-                                wordWrap: 'break-word', 
-                                fontFamily: 'serif',
-                                fontSize: '18px',
-                                lineHeight: '1.6',
-                                padding: '20px',
-                                backgroundColor: '#ffffff',
-                                borderRadius: '8px',
-                                maxWidth: '800px',
-                                margin: '0 auto'
-                            }}
-                        >
+                        <pre>
                             {fileContent}
                         </pre>
                     ) : (

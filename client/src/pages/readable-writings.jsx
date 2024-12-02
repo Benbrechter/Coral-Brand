@@ -64,20 +64,7 @@ function Read(){
             <h1>{writing.title}</h1>
             <h2>{writing.chapter}</h2>
                 {fileContent ? (
-                    <pre 
-                        style={{
-                            whiteSpace: 'pre-wrap',
-                            wordWrap: 'break-word', 
-                            fontFamily: 'serif',
-                            fontSize: '18px',
-                            lineHeight: '1.6',
-                            padding: '20px',
-                            backgroundColor: '#f9f9f9',
-                            borderRadius: '8px',
-                            maxWidth: '800px',
-                            margin: '0 auto'
-                        }}
-                    >
+                    <pre>
                         {fileContent}
                     </pre>
                 ) : (
