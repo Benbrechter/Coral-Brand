@@ -1,4 +1,3 @@
-import HomeBtn from "./componets/home-btn"
 import Navbar from "./componets/navbar"
 import { useParams} from 'react-router-dom';
 import React, {useState, useEffect} from "react"
@@ -61,23 +60,11 @@ function Read(){
     return (
         <div>
             <div><Navbar/></div>
-            <div><HomeBtn/></div>
             <div className="doc-container">
+            <h1>{writing.title}</h1>
+            <h2>{writing.chapter}</h2>
                 {fileContent ? (
-                    <pre 
-                        style={{
-                            whiteSpace: 'pre-wrap',
-                            wordWrap: 'break-word', 
-                            fontFamily: 'serif',
-                            fontSize: '18px',
-                            lineHeight: '1.6',
-                            padding: '20px',
-                            backgroundColor: '#f9f9f9',
-                            borderRadius: '8px',
-                            maxWidth: '800px',
-                            margin: '0 auto'
-                        }}
-                    >
+                    <pre>
                         {fileContent}
                     </pre>
                 ) : (

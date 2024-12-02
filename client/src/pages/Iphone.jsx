@@ -1,4 +1,3 @@
-import HomeBtn from "./componets/home-btn"
 import Navbar from "./componets/navbar"
 import Footer from "./componets/footer";
 
@@ -29,8 +28,7 @@ function Iphone() {
     return(
         <div>
             <div> <Navbar/> </div>
-            <HomeBtn/>
-            <div style={{height: '1400px'}}>
+            <div className="iphone-main">
             <div className = 'camera-gallery'>
               <h1>Camera Gallery</h1>
               <p>I CREATE ART FOR MYSELF! if you like what I produce I love you If you do not it is okay I still love you.</p>

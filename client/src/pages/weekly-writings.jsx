@@ -1,4 +1,3 @@
-import HomeBtn from "./componets/home-btn"
 import Navbar from "./componets/navbar"
 import React, {useState, useEffect} from "react"
 import DocViewer, { DocViewerRenderers } from "react-doc-viewer";
@@ -50,34 +49,46 @@ function WWriting() {
         return <div>Error: {error}</div>
     }
 
+    function showSidebar(){
+        const paragraph = document.querySelector('.weekly-writings-dropdown');
+        const icon = document.querySelector('.writings-dropdown');
+        paragraph.style.display = 'flex';
+        icon.style.display = 'none'
+       }
+       function closeSidebar(){
+         const paragraph = document.querySelector('.weekly-writings-dropdown')
+         const icon = document.querySelector('.writings-dropdown');
+         paragraph.style.display = 'none'
+         icon.style.display = 'flex'
+       }
+
     return (
         <div>
-            <HomeBtn />
             <Navbar />
             <div className='weekly-writing-container'>
                 <div className="weekly-sidebar">
-                    <h1>Why I do What I do?</h1>
-                    <p>I display my weekly writings in pdf format so the viewer has the option to print, download, zoom in, or display a completely different pdf. I write purely for myself and other people's perspectives are valued but never taken into consideration. This platform is my brand. Every week I will come out with chapters from various writing that I have written. I can not and will not post everything I write because I do not have the funds to afford a large scale storage system. I do however have various easter eggs in this site and one of them include directions to a box of hard drives that have my most precious writings. I am not clinically insane but many of my peers have given me this title. I am ok with that.</p>
+                    <div className="weekly-header">
+                        <h1>Why I do What I do?</h1>
+                        <div onClick={ () => showSidebar()} className="writings-dropdown">
+                        <a href="#" style={{marginBottom: '10px'}}><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+                        </div>
+
+                    </div>
+                    <div className="weekly-writings-dropdown">
+                        <div onClick={ () => closeSidebar()}>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg> 
+                        </div>
+                        <p className="weekly-sidebar-p">In my early twenties (I still currenly am in my eary twenties) I developed a crippiling social anxiety. It became easier to not be percived and hide in the comfort of the four walls of my room. going outside became a choire and I didn't leave my house for month on end. During this process I wondered why my circle shrank and why I couldn't look people in the eye's. My fear of being percived especially online held me back in every outing. I stopped talking to strangers out of fear. After I read the Dune seires the Bene Geserit instilled the ideas of fear is the mind killer. I also belive fear is the creater of limitations. I started this project as a way to make my art accesable without going through the process of publishsing and monitizing my writings. Now this has evolved into exposer therapy to break out of my social anxities. Feel free to follow me on this journey as I overcome and conquore my dibilitating fears. </p>
+
+                    </div>
+
                 </div>
                 <div className="pdf-container"> 
-                    <h1>Trey and Xans' Adventures </h1>
-                    <h2>Chapter 1: The Beginning</h2>
+                    <h1>{writing.title} </h1>
+                    <h2>{writing.chapter}</h2>
                     
                     {fileContent ? (
-                        <pre 
-                            style={{
-                                whiteSpace: 'pre-wrap',
-                                wordWrap: 'break-word', 
-                                fontFamily: 'serif',
-                                fontSize: '18px',
-                                lineHeight: '1.6',
-                                padding: '20px',
-                                backgroundColor: '#ffffff',
-                                borderRadius: '8px',
-                                maxWidth: '800px',
-                                margin: '0 auto'
-                            }}
-                        >
+                        <pre>
                             {fileContent}
                         </pre>
                     ) : (
