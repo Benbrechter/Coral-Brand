@@ -1,4 +1,3 @@
-import HomeBtn from "./componets/home-btn"
 import Navbar from "./componets/navbar"
 import { useParams} from 'react-router-dom';
 import React, {useState, useEffect} from "react"
@@ -61,8 +60,9 @@ function Read(){
     return (
         <div>
             <div><Navbar/></div>
-            <div><HomeBtn/></div>
             <div className="doc-container">
+            <h1>{writing.title}</h1>
+            <h2>{writing.chapter}</h2>
                 {fileContent ? (
                     <pre 
                         style={{

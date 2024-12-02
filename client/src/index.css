@@ -45,6 +45,7 @@ margin: 0;
 }
 .bar h1{
   margin: 0;
+  
 }
 
 /* NavBar ------------------------------------------------------------*/
@@ -70,34 +71,92 @@ margin: 0;
   color: var(--yellow);
   text-decoration: none;
 }
-
 .nav-h1:visited{
   color: var(--yellow);
   text-decoration: none;
 }
+.navbar-shrunk{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--purple);
+  flex-direction: row;
+  display: none;
+}
+
+/* sidebar ------------------------------------- */
+.dropdown-menu-icon{
+  display: none;
+  margin-right: 25px
+}
+.sidebar{
+  position: fixed;
+  top:0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: var(--purple);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-self: flex-start;
+}
+.sidebar-li{
+  color: var(--yellow);
+  text-decoration: none;
+}
+.sidebar-li :visited{
+  color: var(--yellow);
+  text-decoration: none;
+}
+.sidebar-ul{
+  list-style-type: none;
+}
+
 
 /* image of trey and I before the About ----------------------------------------*/
 .img-treyandI{
-  background-color: var(--purple);
-  height: 1000px;
+  height:inherit;
+  margin: 0;
 }
 .img-treyandI img{
   width: 100%;
+  height: 100%;
 }
 
 /* About -----------------------------------------------------------------*/
 .about-container{
   background-color: var(--yellow);
-  height: 1000px;
+  height: 1200px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+.bar-about{
+  margin: 0;
+  margin-bottom: 75px;
+  background-color: var(--blue);
+  width: 100%;
+  text-align: center;
+}
+.bar-about h1{
+  margin: 0;
+}
+.img-and-text-container{
+  position: relative
 }
 .about-text{
-  position: relative;
-  left: 950px;
-  bottom: 350px;
+  position: absolute;
+  top: 520px;
+  left: 375px;
   width: 550px;
   height: 400px;
-  border: 2px solid var(--purple);
+  border: 5px solid var(--purple);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -108,11 +167,8 @@ margin: 0;
 .about-img{
   height: 800px;
   width: 550px;
-  border: 7px solid var(--purple);
-  border-radius: 2rem;
-  position: relative;
-  left: 500px;
-  top: 100px;
+  border: 8px solid var(--purple);
+  border-radius: 2.5rem;
   background-color: #242424;
   display: flex;
 }
@@ -120,7 +176,8 @@ margin: 0;
   width: 400px;
 }
 .picture-of-me{
-  height: 100%;
+  height:100%;
+  object-fit: cover;
   border-radius: 2rem;
   overflow: hidden;
 }
@@ -197,12 +254,17 @@ margin: 0;
   width: 500px;
   background-color: var(--blue);
 }
-.weekly-sidebar p{
+.weekly-sidebar-p{
   font-size: 20px;
   width: 350px
 }
 
 /* Shot on Iphone page ---------------------------------------------------------*/
+.iphone-main{
+  height: 1400px;
+  background-color: var(--yellow);
+  padding-top: 30px;
+}
 .display-Iphone{
   display: flex;
   justify-content: center;
@@ -213,6 +275,7 @@ justify-content: flex-start;
 border: 2px solid black;
 border-radius: 1rem;
 width: 1500px;
+background-color: white;
 }
 .iphone-imgBox{
   height: 900px;
@@ -235,10 +298,15 @@ width: 1500px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 30px;
+  margin: 0px;
 }
 
 /* previouse writings page ---------------------------------------------------------*/
+.prevWriting-header{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .prev-writings-ul{
   display: none;
   flex-direction: column;
@@ -260,7 +328,9 @@ width: 1500px;
 .doc-container{
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: var(--yellow);
+  flex-direction: column;
 }
 div#proxy-renderer {
   background-color: var(--yellow);
@@ -272,22 +342,191 @@ div#proxy-renderer {
 
 /* this is the login page styling -----------------------------------------------  */
 
-.form-container{
+.form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
+  background-color:var(--yellow);
+  padding: 20px;
 }
-.form{
+
+.form {
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  top: 40%; 
-  height: 300px;
-  width: 350px;
-  border: 2px solid black;
+  top: 80%;
+  transform: translateY(-50%);
+  width: 400px;
+  max-width: 90%;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border: 1px solid #e0e0e0;
 }
-.login-submit{
-  margin: 30px;
+
+.form h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.login-submit {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
+
+.login-submit div {
+  width: 100%;
+}
+
+.login-submit label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.login-submit input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.login-submit input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+.login-submit button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login-submit button:hover {
+  background-color: #357abd;
+}
+
+.login-submit button:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.form > button {
+  margin-top: 15px;
+  background: none;
+  border: none;
+  color: #4a90e2;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.form > button:hover {
+  color: #357abd;
+  text-decoration: underline;
+}
+
+/* media Queries for Iphone --------------------------------------------- */
+
+/* nabar ----------------------------- */
+@media all and (max-width:320px){
+.navbar-container{
+  display: none;
+}
+.navbar-shrunk{
+  display: flex;
+}
+.dropdown-menu-icon{
+  display: flex;
+}
+.img-container{
+  height: 150px;
+}
+.bar{
+  font-size: 8px;
+  text-align: center;
+}
+/* About ----------------------------- */
+.about-container{
+  height: 1000px ;
+}
+.about-img{
+  height: 400px;
+  width: 250px;
+}
+.about-text{
+  height: 500px;
+  width: 225px;
+  top: 350px;
+  left: 18px;
+  font-size: 13px;
+  text-align: center;
+}
+.about-paragraph{
+  width:200px;
+}
+/* writings Container --------------------------- */
+.Events-Container{
+  flex-direction: column;
+}
+.things-to-do{
+  margin: 5px;
+}
+.things-to-do img{
+height: 30px;  
+}
+.things-to-do h1{
+font-size: 15px;
+}
+/* footer -------------------- */
+.footer-container p{
+  font-size: 10px;
+  width: 250px;
+  text-align: center;
+  font-weight: bold;
+}
+/* onload -------------------------------- */
+.onload-img{
+  height: 200px;
+  margin-left: 20px;
+}
+/* weekly writings page setup ----------------- */
+.weekly-writing-container{
+  flex-direction: column;
+}
+.weekly-sidebar{
+  width: inherit;
+  background-color: var(--yellow);
+}
+.weekly-sidebar h1{
+  font-size: 15px;
+}
+.weekly-writings-dropdown{
+  display: none;
+}
+.weekly-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.weekly-sidebar-p{
+  font-size: 15px;
+  width: 250px;
+}
 }

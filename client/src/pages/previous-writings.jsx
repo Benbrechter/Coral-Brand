@@ -1,4 +1,3 @@
-import HomeBtn from "./componets/home-btn"
 import Navbar from "./componets/navbar"
 import { Link, useNavigate  } from "react-router-dom"
 import React, {useState , useEffect} from "react"
@@ -42,8 +41,7 @@ function PrevWriting(){
     return(
         <div>
             <div> <Navbar/> </div>
-            <div><HomeBtn/></div>
-            <div>
+            <div className="prevWriting-header">
               <h1>I Know You Love MEEEE</h1> 
               <p>So please feel free to read all my previouse chapters I have.</p> 
             </div>

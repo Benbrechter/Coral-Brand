@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import HomeBtn from "./home-btn";
+import Navbar from "./navbar";
 import Auth from '../../utils/auth';
 
 const Login = () => {
@@ -58,8 +58,10 @@ const Login = () => {
   };
 
   return (
-    <div className="form-container">
-      <HomeBtn />
+    <div>
+      <Navbar/>
+      <div className="form-container">
+        
       <div className="form">
         <h1>{isLogin ? "Login" : "Sign Up"}</h1>
 
@@ -119,6 +121,8 @@ const Login = () => {
         </button>
       </div>
     </div>
+    </div>
+    
   );
 };
 

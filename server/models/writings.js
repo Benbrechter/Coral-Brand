@@ -20,7 +20,7 @@ const writingSchema = new mongoose.Schema({
     type: String,
   },
   chapter: {
-    type: Number
+    type: String
   }
 },
  { timestamps: true }

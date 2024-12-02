@@ -1,7 +1,6 @@
 import Navbar from './componets/navbar';
 import About from './componets/About'
 import WritingsContainer from './componets/writing-container';
-import HomeBtn from './componets/home-btn';
 import Footer from './componets/footer';
 import background from './pictures/collage2.png'
 
@@ -9,7 +8,6 @@ import background from './pictures/collage2.png'
 function Home(){
     return(
         <div>
-            <HomeBtn/>
             <div>
                 <Navbar/>
             </div>
