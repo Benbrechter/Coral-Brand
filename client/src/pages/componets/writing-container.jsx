@@ -10,7 +10,7 @@ function WritingsContainer(){
     return(
         <div>
             <div className='bar'>
-                <h1>Who am I to judge another when I myself walk as an imperfect man</h1>
+                <h1>The theory of paradox is why I never close doors because I know I’ve already done that</h1>
             </div>
            <motion.div 
             initial={{ opacity: 0, x: -100 }}
