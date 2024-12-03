@@ -6,7 +6,7 @@ function About() {
     return(
         <div>
             <div className='bar'>
-                <h1>Who am I to judge another when I myself walk as an imperfect man</h1>
+                <h1>I carry a graveyard in my back pocket to pay tribute to dead presidents</h1>
             </div>
             <div className="about-container">
             
@@ -27,7 +27,7 @@ function About() {
                 transition={{ duration: 0.6 }}
                 className="about-text"
             >
-                <h1>Meet Me</h1>
+                <h1 className='about-h1'>Meet Me</h1>
                 <p className="about-paragraph">
                     Hiia! I am 22 years old and go by the title of a creative. My alias online are Benbeejammin and TwoSoulsProjection. My only goal in life to to maintain happiness and spread smiles throughout my peers. I don't belive in getting rich becasue too much money will corrupt even the purest. Ideally I would just like to keep living joyous and fed. 
                 </p>

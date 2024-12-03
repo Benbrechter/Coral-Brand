@@ -75,7 +75,7 @@ function WWriting() {
 
                     </div>
                     <div className="weekly-writings-dropdown">
-                        <div onClick={ () => closeSidebar()}>
+                        <div onClick={ () => closeSidebar()} className="writings-hide">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg> 
                         </div>
                         <p className="weekly-sidebar-p">In my early twenties (I still currenly am in my eary twenties) I developed a crippiling social anxiety. It became easier to not be percived and hide in the comfort of the four walls of my room. going outside became a choire and I didn't leave my house for month on end. During this process I wondered why my circle shrank and why I couldn't look people in the eye's. My fear of being percived especially online held me back in every outing. I stopped talking to strangers out of fear. After I read the Dune seires the Bene Geserit instilled the ideas of fear is the mind killer. I also belive fear is the creater of limitations. I started this project as a way to make my art accesable without going through the process of publishsing and monitizing my writings. Now this has evolved into exposer therapy to break out of my social anxities. Feel free to follow me on this journey as I overcome and conquore my dibilitating fears. </p>
