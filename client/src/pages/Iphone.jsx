@@ -1,5 +1,6 @@
 import Navbar from "./componets/navbar"
 import Footer from "./componets/footer";
+import img from "./pictures/development.png"
 
 import React, {useState , useEffect} from "react"
 
@@ -28,8 +29,9 @@ function Iphone() {
     return(
         <div>
             <div> <Navbar/> </div>
-
-  
+            <div className="development">
+              <img src={img} alt="" />
+            </div>
             <Footer/>
         </div>
     )

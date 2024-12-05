@@ -365,7 +365,14 @@ background-color: white;
   flex-direction: column;
   margin: 0px;
 }
-
+.development{
+  height: 750px;
+  display: flex;
+  justify-content: center;
+}
+.development img{
+  height: 900px;
+}
 /* previouse writings page ---------------------------------------------------------*/
 .prevWriting-header{
   display: flex;
@@ -546,6 +553,7 @@ background-color: white;
 .about-img{
   height: 400px;
   width: 250px;
+  margin: 0;
 }
 .about-text{
   height: 450px;
@@ -561,12 +569,19 @@ background-color: white;
 /* writings Container --------------------------- */
 .Events-Container{
   flex-direction: column;
+  height: max-content;
 }
 .things-to-do{
   margin: 5px;
+  height: 300px;
+  width: 200px;
+}
+.things-to-do-img-container{
+  border: 5px solid #e8e8e8;
 }
 .things-to-do img{
-height: 30px;  
+height: 175px;  
+
 }
 .things-to-do h1{
 font-size: 15px;
@@ -607,7 +622,7 @@ font-size: 15px;
   width: 250px;
 }
 pre{
-  font-size: 15px;
+  font-size: 18px;
 }
 .writings-dropdown{
   display: flex;
@@ -670,6 +685,13 @@ position: relative;
 left: 0;
 text-align: center;
 width: 225px;
+}
+.development{
+  height: 500px;
+}
+.development img{
+  margin-right: 50px;
+  height: 600px;
 }
 /* login ------------------------------------ */
 .form-container{
