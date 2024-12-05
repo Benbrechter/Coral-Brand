@@ -14,7 +14,7 @@ function WWriting() {
             try {
                 setIsLoading(true)
                 // First, fetch the document metadata
-                const response = await fetch('/api/documents/674cbf7f5a145c33a5f8831c')
+                const response = await fetch('/api/documents/6750f5b90bb264405b725326')
                 if (!response.ok) {
                     throw new Error('Failed to fetch writing metadata')
                 }
@@ -70,7 +70,7 @@ function WWriting() {
                     <div className="weekly-header">
                         <h1>Why I do What I do?</h1>
                         <div onClick={ () => showSidebar()} className="writings-dropdown">
-                        <a href="#" style={{marginBottom: '10px'}}><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+                        <a href="#" style={{marginTop: '5px', marginLeft: '20px'}}><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
                         </div>
 
                     </div>

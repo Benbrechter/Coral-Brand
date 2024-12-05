@@ -28,7 +28,17 @@ function Iphone() {
     return(
         <div>
             <div> <Navbar/> </div>
-            <div className="iphone-main">
+
+  
+            <Footer/>
+        </div>
+    )
+
+}
+
+export default Iphone
+
+ {/* <div className="iphone-main">
             <div className = 'camera-gallery'>
               <h1>Camera Gallery</h1>
               <p>I CREATE ART FOR MYSELF! if you like what I produce I love you If you do not it is okay I still love you.</p>
@@ -52,11 +62,4 @@ function Iphone() {
             </div>
             </div>
            
-            </div>
-            <Footer/>
-        </div>
-    )
-
-}
-
-export default Iphone
+            </div> */}

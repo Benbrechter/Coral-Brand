@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom';
 import logo from '../pictures/logo.png'
 import user from "../pictures/userIcon.png"
+import navImg from '../pictures/nav-img.png'
+import instagram from '../pictures/instagram.png'
+import wallet from '../pictures/wallet.png'
+
+
+
 
 function Navbar() {
     function showSidebar(){
@@ -14,16 +20,26 @@ function Navbar() {
     return(
         <div>
         <nav className='navbar-container'>
-            <Link to = '/Home'>
-            <div className='img-container'>
-               <img src= {logo} alt="this will be the logo" />
-            </div>
-            </Link>
-            <div>
+            <div className='img-orientation'>
+                <div className='recycle-img-container'>
+                    <img src={navImg} alt="" />
+                </div>
+                <Link to = '/Home'>
+                    <div className='img-container'>
+                       <img src= {logo} alt="this will be the logo" />
+                    </div>
+                </Link>
+                <div className='nav-links-container'>
+                    <Link to = '/login'><img src= {user} alt=""  style={{height: "35px", margin: '10px'}}/></Link>
+                <a href="https://www.instagram.com/benbeejammin/"><img src = {instagram} alt="this will route to my insta"  style={{height: "35px", margin: '10px'}}/></a>
+                <a href="https://account.venmo.com/u/Ben-Brechter"><img src= {wallet} alt="This will link you to my venmo"  style={{height: "35px", margin: '10px'}} /></a>
+                </div>
                 
+
             </div>
+            
+           
             <ul className='navbar-ul'>
-                <li> <Link to = '/login'><img src= {user} alt=""  style={{height: "25px"}}/></Link> </li>
                 <li><Link to = '/' className='nav-h1'>Home</Link> </li>
                 <li><Link to = '/writings'className='nav-h1'>This Weeks Story</Link> </li>
                 <li><Link to = '/prevWriting'className='nav-h1'>Previous Weeks Story</Link> </li>
