@@ -10,7 +10,15 @@
     "main": "server/server.js",
     "packages": {},
     "devDependencies": {
-        "concurrently": "^8.2.0"
+        "@aws-amplify/backend": "^1.8.0",
+        "@aws-amplify/backend-cli": "^1.4.2",
+        "aws-cdk": "^2.171.1",
+        "aws-cdk-lib": "^2.171.1",
+        "concurrently": "^9.1.0",
+        "constructs": "^10.4.2",
+        "esbuild": "^0.24.0",
+        "tsx": "^4.19.2",
+        "typescript": "^5.7.2"
     },
     "scripts": {
         "build": "cd client && npm run build",
@@ -22,6 +30,7 @@
     "dependencies": {
         "ajv": "^8.17.1",
         "animate.css": "^4.1.1",
+        "aws-amplify": "^6.10.2",
         "bcrypt": "^5.1.1",
         "body-parser": "^1.20.3",
         "dotenv": "^16.4.7",
