@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom"
-import cabnet from '../pictures/filingCabnet.png'
-import cat from '../pictures/catReading.png'
-import camera from '../pictures/Camera.png'
-import computer from "../pictures/macbook.png"
+import flower from '../pictures/imgFlower.jpg'
+import camera from '../pictures/imgTogo.jpg'
+import computer from "../pictures/imgMeAtDoor.jpg"
 
 import { motion } from 'framer-motion';
 
@@ -18,34 +17,38 @@ function WritingsContainer(){
             viewport={{ once: false }}
             transition={{ duration: 0.6 }}
             className="Events-Container">
+
+            <Link to = '/writings'className="link">
             <div className="things-to-do">
-                <Link to = '/writings'className="link">
-                <img src={computer} alt="Notebook maybe" />
+                <div className="things-to-do-img-container">
+                   <img src={computer} alt="Notebook maybe" /> 
+                </div>
+                
                 <h1>Weekly Writings</h1>
-                </Link>
+                
             </div>
+            </Link>
+            <Link to = '/Iphone' className="link">
             <div className="things-to-do">
-                <Link to = '/Iphone' className="link">
-                <img src={camera} alt="Images off an Iphone" />
+                <div className="things-to-do-img-container">
+                    <img src={camera} alt="Images off an Iphone" />
+                </div>
+                
                 <h1>Shot on Iphone</h1>
-                </Link>
+                
             </div>
+            </Link>
+            <Link to = '/prevWriting' className="link">
             <div className="things-to-do">
-                <Link to = '/prevWriting' className="link">
-                <img src={cabnet} alt="Filing cabnet" />
+                <div className="things-to-do-img-container">
+                   <img src={flower} alt="Filing cabnet" /> 
+                </div>
+                
                 <h1>Previous Writings</h1>
-                </Link>
+                
             </div>
-            <div className="things-to-do">
-                <Link to = "/Iphone" className="link">
-                <img src={cat} alt="Cartoon gif of a black cat" />
-                <h1>Shot on iPhone</h1>
-                </Link>
-            </div>
+            </Link>
         </motion.div> 
-        <div className='bar'>
-                <h1>Who am I to judge another when I myself walk as an imperfect man</h1>
-            </div>
         </div>
         
     )

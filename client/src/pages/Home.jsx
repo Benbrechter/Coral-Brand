@@ -2,7 +2,7 @@ import Navbar from './componets/navbar';
 import About from './componets/About'
 import WritingsContainer from './componets/writing-container';
 import Footer from './componets/footer';
-import background from './pictures/collage2.png'
+import background from './pictures/collage.png'
 
 
 function Home(){

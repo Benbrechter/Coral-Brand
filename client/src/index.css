@@ -1,16 +1,18 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lacquer&family=Monoton&family=Oswald:wght@200..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Moo+Lah+Lah&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tiny5&display=swap');
 
 :root {
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  --purple: #88ed;
-  --blue: #5296d899;
-  --yellow: #ecd488;
-  --quote: Bebas Neue;
-  --header: "Moo Lah Lah", sans-serif;
+  --purple: #783cff;
+  --blue: #3cc4ff;
+  --yellow: #ffd93c;
+  --red: #ff3c62;
+  --green: #00710c;
+  --quote: "Bebas Neue";
+  --header: "Tiny5", sans-serif;
 
 
 
@@ -45,7 +47,7 @@ margin: 0;
 .bar{
   display: flex;
   justify-content: center;
-  background-color: var(--blue);
+  background-color: var(--red);
   
 }
 .bar h1{
@@ -61,7 +63,21 @@ margin: 0;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: var(--purple);
+  background-color: var(--yellow);
+}
+.img-orientation{
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-items: center;
+    justify-content: space-around;
+}
+.recycle-img-container{
+  height: 275px;
+}
+.recycle-img-container img{
+  height: 275px;
 }
 .navbar-ul{
   display: flex;
@@ -75,11 +91,11 @@ margin: 0;
 }
 .nav-h1{
   margin: 20px;
-  color: var(--yellow);
+  color: var(--purple);
   text-decoration: none;
 }
 .nav-h1:visited{
-  color: var(--yellow);
+  color: var(--purple);
   text-decoration: none;
 }
 .navbar-shrunk{
@@ -127,7 +143,7 @@ margin: 0;
 /* image of ME before the About ----------------------------------------*/
 .img-treyandI{
   height:inherit;
-  background-color: var(--blue);
+  background-color: var(--red);
 }
 .img-treyandI img{
   width: 100%;
@@ -143,16 +159,7 @@ margin: 0;
   align-items: center;
   padding-top: 50px;
 }
-.bar-about{
-  margin: 0;
-  margin-bottom: 75px;
-  background-color: var(--blue);
-  width: 100%;
-  text-align: center;
-}
-.bar-about h1{
-  margin: 0;
-}
+
 .img-and-text-container{
   position: relative
 }
@@ -172,12 +179,13 @@ margin: 0;
   background-color: var(--purple);
 }
 .about-h1{
-  font-family: var(--header);
   color: var(--yellow);
+  font-family: var(--header);
 }
 .about-img{
-  height: 800px;
-  width: 550px;
+  height: 950px;
+  width: 650px;
+  margin-right: 200px;
   border: 8px solid var(--yellow);
   border-radius: 2.5rem;
   background-color: #242424;
@@ -199,20 +207,35 @@ margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 500px;
-  background-color: var(--yellow);
+  height: 750px;
+  background-color: var(--red);
 }
 .things-to-do{
-  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  width: 400px;
   text-align: center;
+  border: 3px solid var(--yellow);
+  border-radius: 1rem;
+  margin: 30px;
   
 }
+.things-to-do-img-container{
+  width: max-content;
+  background-color:#e8e8e8 ;
+  border: 20px solid #e8e8e8;
+}
 .things-to-do img{
-  height: 200px;
+  height: 400px;
+  margin: 0;
 }
 .things-to-do h1{
-  font-family: var(--header);
-  color: var(--purple);
+  color: black;
+  margin: 10px;
+  font-family: var(--quote);
 }
 
 .link{
@@ -226,7 +249,7 @@ margin: 0;
 
 /* footer ------------------------------------------------------------*/
 .footer-container{
-  background-color: var(--purple);
+  background-color: var(--yellow);
   height: 175px;
   display: flex;
   flex-direction: column;
@@ -246,6 +269,9 @@ margin: 0;
   display: flex;
   flex-direction: row;
 }
+.weekly-writings-dropdown{
+  display: none;
+}
 .pdf-container{
   width: 100%;
   display: flex;
@@ -260,7 +286,7 @@ pre {
   white-space: pre-wrap;
   word-wrap: break-word;
   font-family: serif;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   padding: 20px;
   background-color: #ffffff;
@@ -268,7 +294,11 @@ pre {
   max-width: 800px;
   margin: 0 auto;
 }
-
+.weekly-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .text-container{
   width: 950px;
   font-size: 20px;
@@ -279,18 +309,19 @@ pre {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: max-content;
   width: 500px;
-  background-color: var(--blue);
 }
 .weekly-sidebar-p{
   font-size: 20px;
-  width: 350px
+  width: 350px;
+  text-align: center;
 }
 .writings-dropdown{
-  display: none;
+  display: flex;
 }
 .writings-hide{
-  display: none;
+  display: flex;
 }
 
 /* Shot on Iphone page ---------------------------------------------------------*/
@@ -379,11 +410,7 @@ background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--yellow);
   flex-direction: column;
-}
-div#proxy-renderer {
-  background-color: var(--yellow);
 }
 .docViewer{
   width: 950px;
