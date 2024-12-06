@@ -1,6 +1,5 @@
 import Navbar from "./componets/navbar"
 import React, {useState, useEffect} from "react"
-import DocViewer, { DocViewerRenderers } from "react-doc-viewer";
 import Footer from "./componets/footer"
 
 function WWriting() {
@@ -88,26 +87,12 @@ function WWriting() {
                     <h2>{writing.chapter}</h2>
                     
                     {fileContent ? (
-                        <pre>
-                            {fileContent}
-                        </pre>
-                    ) : (
-                        <DocViewer 
-                            className="text-container"
-                            pluginRenderers={DocViewerRenderers}
-                            documents={[{ 
-                                uri: writing?.path,
-                                fileType: 'txt' 
-                            }]} 
-                            config={{
-                                header: {
-                                    disableHeader: true,
-                                    disableFileName: false,
-                                    retainURLParams: false,
-                                }
-                            }}
-                        />
-                    )}
+                    <pre>
+                        {fileContent}
+                    </pre>
+                ) : (
+                    <div>No content found</div>
+                )}
                 </div>
             </div>
             <Footer/>
