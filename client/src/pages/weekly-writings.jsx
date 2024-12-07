@@ -8,6 +8,8 @@ function WWriting() {
     const [error, setError] = useState(null)
     const [fileContent, setFileContent] = useState('')
 
+
+      //this fetchrequest is pulling from local I need open connectDB and get that data and query the data to displaygit add _
     useEffect(() => {
         const fetchWritings = async () => {
             try {
