@@ -13,7 +13,7 @@ function WWriting() {
             try {
                 setIsLoading(true)
                 // First, fetch the document metadata
-                const response = await fetch('/documents/6750f5b90bb264405b725326')
+                const response = await fetch('/documents')
                 if (!response.ok) {
                     throw new Error('Failed to fetch writing metadata')
                 }
