@@ -5,7 +5,7 @@ const userRoutes = require('./userRoutes')
 const pictureRoutes = require('./pictureRoutes')
 
 
-router.use('/documents', documentRoutes);
+router.use('/DOCuments', documentRoutes);
 router.use('/', userRoutes)
 router.use('/pictures', pictureRoutes)
 
