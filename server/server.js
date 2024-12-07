@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
-app.use('/api', routes);
+app.use('/', routes);
 
 // Error handling
 app.use(errorHandler);
