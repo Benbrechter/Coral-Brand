@@ -529,7 +529,7 @@ background-color: white;
 /* media Queries for Iphone --------------------------------------------- */
 
 /* nabar ----------------------------- */
-@media all and (max-width:320px){
+@media all and (max-width:400px){
 .navbar-container{
   display: none;
 }
