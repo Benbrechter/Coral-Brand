@@ -39,7 +39,7 @@ app.use(errorHandler);
 process.on('unhandledRejection', (error) => {
     console.error('Unhandled Rejection:', error);
 });
-
+//O am addinng a comment for fun 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     console.log(`Uploads directory: ${uploadsDir}`);
