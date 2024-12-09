@@ -15,7 +15,7 @@ function WWriting() {
             try {
                 setIsLoading(true)
                 // First, fetch the document metadata
-                const response = await fetch('/documents')
+                const response = await fetch('https://main.d1wcswfis70r56.amplifyapp.com/api/documents/6750f5b90bb264405b725326')
                 if (!response.ok) {
                     throw new Error('Failed to fetch writing metadata')
                 }

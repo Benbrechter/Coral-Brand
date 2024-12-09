@@ -8,7 +8,7 @@ const routes = require('./routes');
 const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
-//const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
 // Create uploads folder if it doesn't exist
 const uploadsDir = path.join(__dirname, 'uploads');
@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
-app.use('/', routes);
+app.use('/api', routes);
 
 // Error handling
 app.use(errorHandler);
@@ -39,9 +39,9 @@ app.use(errorHandler);
 process.on('unhandledRejection', (error) => {
     console.error('Unhandled Rejection:', error);
 });
-//O am addinng a comment for fun 
-//app.listen(PORT, () => {
-    //console.log(`Server is running on port ${PORT}`);
-    //console.log(`Uploads directory: ${uploadsDir}`);
-//}
-//);
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+    console.log(`Uploads directory: ${uploadsDir}`);
+}
+);
