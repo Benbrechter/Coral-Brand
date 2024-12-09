@@ -3,9 +3,14 @@ const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path');
 const fs = require('fs');
+const { ApolloServer } = require('@apollo/server');
+const { expressMiddleware } = require('@apollo/server/express4');
+const { graphqlUploadExpress } = require('graphql-upload');
 const connectDB = require('./config/connections');
-const routes = require('./routes');
-const errorHandler = require('./middleware/errorHandler');
+
+// Import GraphQL schemas and resolvers
+const typeDefs = require('./schemas/typeDefs');
+const resolvers = require('./schemas/resolvers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -20,28 +25,53 @@ if (!fs.existsSync(uploadsDir)) {
 // Connect to MongoDB
 connectDB();
 
-// Middleware
-app.use(cors());
-app.use(morgan('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// Serve uploaded files statically - use absolute path
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-// Routes
-app.use('/', routes);
-
-// Error handling
-app.use(errorHandler);
-
-// Add error logging for unhandled promises
-process.on('unhandledRejection', (error) => {
-    console.error('Unhandled Rejection:', error);
+// Create Apollo Server
+const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    formatError: (error) => {
+        console.error('GraphQL Error:', error);
+        return error;
+    }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-    console.log(`Uploads directory: ${uploadsDir}`);
+async function startServer() {
+    // Start Apollo Server
+    await server.start();
+
+    // Middleware
+    app.use(cors());
+    app.use(morgan('dev'));
+
+    // GraphQL Upload middleware
+    app.use(graphqlUploadExpress({ maxFileSize: 20 * 1024 * 1024, maxFiles: 1 }));
+
+    // GraphQL endpoint
+    app.use('/graphql', 
+        express.json(),
+        expressMiddleware(server, {
+            context: async ({ req }) => {
+                // Optional: Add authentication context
+                return { req };
+            }
+        })
+    );
+
+    // Serve uploaded files statically
+    app.use('/uploads', express.static(uploadsDir));
+
+    // Add error logging for unhandled promises
+    process.on('unhandledRejection', (error) => {
+        console.error('Unhandled Rejection:', error);
+    });
+
+    // Start the server
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+        console.log(`Uploads directory: ${uploadsDir}`);
+        console.log(`GraphQL endpoint: http://localhost:${PORT}/graphql`);
+    });
 }
-);
+
+// Start the server
+startServer().catch(console.error);
