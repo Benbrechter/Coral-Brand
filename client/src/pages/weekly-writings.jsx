@@ -1,16 +1,15 @@
 import Navbar from "./componets/navbar"
-import React, {useState, useEffect} from "react"
 import Footer from "./componets/footer"
 import { useQuery } from '@apollo/client';
 import { GET_WRITING_BY_ID } from "../utils/queries"
 
 function WWriting() {
-    const { loading, data } = useQuery(GET_WRITING_BY_ID, {
-        variables: { id: '6750f5b90bb264405b725326' }
+    const writingId = "6757579d56defe00d532f8bf";
+    const { loading, error, data } = useQuery(GET_WRITING_BY_ID, {
+        variables: { getWritingId: writingId }
       });
-    const writingsData = data?.getWriting || [];
-    console.log(writingsData)
-    
+      const writingData = data?.getWriting || []
+      console.log(writingData || 'No data')
 
 
       //this fetchrequest is pulling from local I need open connectDB and get that data and query the data to displaygit add _
@@ -50,7 +49,15 @@ function WWriting() {
 
                 </div>
                 <div className="pdf-container"> 
-                    {writingsData}
+                {loading ? (
+                    <p>Loading...</p>
+                        ) : error ? (
+                        <p>Error: {error.message}</p>
+                        ) : writingData ? (
+                        <pre> {writingData.content}</pre>
+                        ) : (
+                        <p>No writing found</p>
+                        )}
                 </div>
             </div>
             <Footer/>

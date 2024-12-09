@@ -15,12 +15,17 @@ import {
   createHttpLink,
 } from '@apollo/client';
 
-const httpLink = createHttpLink({
-  uri: '/graphql',
+
+const uploadLink = createHttpLink({
+  uri: '/graphql', // your GraphQL endpoint
+  headers: {
+    'x-apollo-operation-name': 'UploadWriting'
+  }
 });
 
 const client = new ApolloClient({
   // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  link: uploadLink,
   cache: new InMemoryCache(),
 });
 // Custom Hook for Route Loading

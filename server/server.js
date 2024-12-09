@@ -5,7 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
-const { graphqlUploadExpress } = require('graphql-upload-ts');
+const { graphqlUploadExpress } = require('graphql-upload');
 const connectDB = require('./config/connections');
 
 // Import GraphQL schemas and resolvers
@@ -44,7 +44,7 @@ async function startServer() {
     app.use(morgan('dev'));
 
     // GraphQL Upload middleware
-    app.use(graphqlUploadExpress());
+    app.use(graphqlUploadExpress({ maxFileSize: 20 * 1024 * 1024, maxFiles: 1 }));
 
     // GraphQL endpoint
     app.use('/graphql', 

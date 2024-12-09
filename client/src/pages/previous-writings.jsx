@@ -1,25 +1,15 @@
 import Navbar from "./componets/navbar"
 import { Link, useNavigate  } from "react-router-dom"
-import React, {useState , useEffect} from "react"
 import PrevWritingTitle from "./componets/prev-title"
+import { useQuery } from "@apollo/client";
+import { GET_ALL_WRITINGS } from "../utils/queries";
 
 function PrevWriting(){
-    const navigate = useNavigate();
-    const [writingData, setWritingData] = useState([]);
-
-    useEffect(() => {
-        const fetchWritings = async () => {
-            try{
-                const response = await fetch('/api/documents');
-                const writingData = await response.json();
-                console.log(writingData)
-                setWritingData(writingData);
-            }catch(error){
-                console.error('The writings did not persist', error)
-            }
-        };
-        fetchWritings()   
-    }, [])
+    const {loading, error, data} = useQuery(GET_ALL_WRITINGS);
+    const writingData = data?.getWritings || [];
+    console.log('writingData:', writingData);
+      
+    
         const handleWritingClick = (writingId) => {
             // Navigate to the chatroom
             navigate(`/documents/${writingId}`);
@@ -64,15 +54,15 @@ function PrevWriting(){
                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
                     </a>
                 </div>
-                    {writingData.map((writing, index) => (
-                    <li key={writing._id || `writing${index}`}>
-                    <Link
-                        to={`/documents/${writing._id}`}
-                        onClick={() => handleWritingClick(writing._id)}
-                    >
-                        <PrevWritingTitle writing={writing} />
-                    </Link>
-                    </li>
+                     {writingData.map((writing, index) => (
+                        <li key={writing._id || `writing${index}`}>
+                            <Link
+                                to={`/documents/${writing.id}`}
+                                onClick={() => handleWritingClick(writing.id)}
+                            >
+                                <PrevWritingTitle writing={writing}/>
+                            </Link>
+                        </li>
                 ))}
                 </ul>
                 

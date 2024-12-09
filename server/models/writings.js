@@ -6,7 +6,7 @@ const writingSchema = new mongoose.Schema({
     required: true
   },
   data: {
-   type: Buffer
+   type: String
   } ,
   contentType: {
     type: String,
