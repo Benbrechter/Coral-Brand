@@ -5,16 +5,14 @@ const writingSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  data: Buffer,
+  data: {
+   type: Buffer
+  } ,
   contentType: {
     type: String,
   },
   content: {
     type: String,
-  },
-  path: {
-    type: String,
-    required: true
   },
   title: {
     type: String,

@@ -1,55 +1,20 @@
 import Navbar from "./componets/navbar"
 import React, {useState, useEffect} from "react"
 import Footer from "./componets/footer"
+import { useQuery } from '@apollo/client';
+import { GET_WRITING_BY_ID } from "../utils/queries"
 
 function WWriting() {
-    const [writing, setWritings] = useState(null)
-    const [isLoading, setIsLoading] = useState(true)
-    const [error, setError] = useState(null)
-    const [fileContent, setFileContent] = useState('')
+    const { loading, data } = useQuery(GET_WRITING_BY_ID, {
+        variables: { id: '6750f5b90bb264405b725326' }
+      });
+    const writingsData = data?.getWriting || [];
+    console.log(writingsData)
+    
 
 
       //this fetchrequest is pulling from local I need open connectDB and get that data and query the data to displaygit add _
-    useEffect(() => {
-        const fetchWritings = async () => {
-            try {
-                setIsLoading(true)
-                // First, fetch the document metadata
-                const response = await fetch('/documents')
-                if (!response.ok) {
-                    throw new Error('Failed to fetch writing metadata')
-                }
-                const data = await response.json()
-                
-                // Then, fetch the raw text content
-                const textResponse = await fetch(data.path)
-                if (!textResponse.ok) {
-                    throw new Error('Failed to fetch file content')
-                }
-                const textContent = await textResponse.text()
-                
-                console.log('Fetched content:', textContent) // Debug log
-                
-                setWritings(data)
-                setFileContent(textContent)
-            } catch (error) {
-                console.error('Error fetching writing:', error)
-                setError(error.message)
-            } finally {
-                setIsLoading(false)
-            }
-        }
-        fetchWritings()
-    }, [])
-
-    if (isLoading) {
-        return <div>Loading...</div>
-    }
-
-    if (error) {
-        return <div>Error: {error}</div>
-    }
-
+   
     function showSidebar(){
         const paragraph = document.querySelector('.weekly-writings-dropdown');
         const icon = document.querySelector('.writings-dropdown');
@@ -85,16 +50,7 @@ function WWriting() {
 
                 </div>
                 <div className="pdf-container"> 
-                    <h1>{writing.title} </h1>
-                    <h2>{writing.chapter}</h2>
-                    
-                    {fileContent ? (
-                    <pre>
-                        {fileContent}
-                    </pre>
-                ) : (
-                    <div>No content found</div>
-                )}
+                    {writingsData}
                 </div>
             </div>
             <Footer/>

@@ -8,7 +8,21 @@ import Iphone from './pages/Iphone';
 import Read from './pages/readable-writings';
 import Login from './pages/componets/login';
 import OnLoad from './pages/componets/onload';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const client = new ApolloClient({
+  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  cache: new InMemoryCache(),
+});
 // Custom Hook for Route Loading
 const useRouteLoading = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -41,6 +55,7 @@ const RouteLoaderWrapper = ({ children }) => {
 function App() {
 
   return (
+  <ApolloProvider client = {client}>
     <Router>
       <RouteLoaderWrapper>
         <div className='page-container'>
@@ -59,6 +74,7 @@ function App() {
         </div>
       </RouteLoaderWrapper>
     </Router>
+</ApolloProvider>
   );
 }
 
