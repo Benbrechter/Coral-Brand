@@ -1,6 +1,7 @@
 import Navbar from "./componets/navbar"
 import React, {useState, useEffect} from "react"
 import Footer from "./componets/footer"
+const { MongoClient, ObjectId } = require('mongodb');
 
 function WWriting() {
     const [writing, setWritings] = useState(null)
@@ -8,30 +9,44 @@ function WWriting() {
     const [error, setError] = useState(null)
     const [fileContent, setFileContent] = useState('')
 
-
-      //this fetchrequest is pulling from local I need open connectDB and get that data and query the data to displaygit add _
     useEffect(() => {
         const fetchWritings = async () => {
             try {
                 setIsLoading(true)
-                // First, fetch the document metadata
-                const response = await fetch('https://main.d1wcswfis70r56.amplifyapp.com/api/documents/6750f5b90bb264405b725326')
-                if (!response.ok) {
-                    throw new Error('Failed to fetch writing metadata')
+                
+                // MongoDB connection (similar to Lambda logic)
+                const MONGODB_URI = process.env.REACT_APP_MONGODB_URI; // Use environment variable
+                
+                // Connect to MongoDB
+                const client = await MongoClient.connect(MONGODB_URI, { 
+                    useNewUrlParser: true, 
+                    useUnifiedTopology: true 
+                });
+
+                try {
+                    const database = client.db('test'); // Your database name
+                    const writingsCollection = database.collection('writing'); // Your collection name
+
+                    // Fetch document by ID
+                    const documentId = '6750f5b90bb264405b725326';
+                    const documentMetadata = await writingsCollection.findOne({ 
+                        _id: new ObjectId(documentId) 
+                    });
+
+                    if (!documentMetadata) {
+                        throw new Error('Document not found');
+                    }
+
+                    // Set the writing metadata
+                    setWritings(documentMetadata);
+                    
+                    // If content is stored directly in the document
+                    setFileContent(documentMetadata.content || '');
+
+                } finally {
+                    // Close the MongoDB connection
+                    await client.close();
                 }
-                const data = await response.json()
-                
-                // Then, fetch the raw text content
-                const textResponse = await fetch(data.path)
-                if (!textResponse.ok) {
-                    throw new Error('Failed to fetch file content')
-                }
-                const textContent = await textResponse.text()
-                
-                console.log('Fetched content:', textContent) // Debug log
-                
-                setWritings(data)
-                setFileContent(textContent)
             } catch (error) {
                 console.error('Error fetching writing:', error)
                 setError(error.message)
@@ -103,3 +118,25 @@ function WWriting() {
 }
 
 export default WWriting
+
+// // Example of converting your document route to a Lambda function
+// exports.handler = async (event) => {
+//     try {
+//         await connectDB();  // Your MongoDB connection
+//         const documents = await Document.find({});
+        
+//         return {
+//             statusCode: 200,
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 "Access-Control-Allow-Origin": "*"  // CORS header
+//             },
+//             body: JSON.stringify(documents)
+//         };
+//     } catch (error) {
+//         return {
+//             statusCode: 500,
+//             body: JSON.stringify({ error: error.message })
+//         };
+//     }
+// };
