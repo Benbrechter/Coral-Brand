@@ -1,7 +1,7 @@
 import Navbar from "./componets/navbar"
 import React, {useState, useEffect} from "react"
 import Footer from "./componets/footer"
-import { MongoClient, ObjectId } from 'mongodb';
+import { MongoClient, ObjectId } from "mongodb"
 
 function WWriting() {
     const [writing, setWritings] = useState(null)
