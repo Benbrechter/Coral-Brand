@@ -10,10 +10,6 @@
     "main": "server/server.js",
     "packages": {},
     "devDependencies": {
-        "@aws-amplify/backend": "^1.8.0",
-        "@aws-amplify/backend-cli": "^1.4.2",
-        "aws-cdk": "^2.171.1",
-        "aws-cdk-lib": "^2.171.1",
         "concurrently": "^9.1.0",
         "constructs": "^10.4.2",
         "esbuild": "^0.24.0",
@@ -32,7 +28,6 @@
         "ajv": "^8.17.1",
         "animate.css": "^4.1.1",
         "apollo-server-express": "^3.13.0",
-        "aws-amplify": "^6.10.2",
         "bcrypt": "^5.1.1",
         "body-parser": "^1.20.3",
         "dotenv": "^16.4.7",
